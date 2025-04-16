@@ -1,0 +1,5 @@
+black-bg: #111204
+turquoise: #51FFF8
+dark-turquoise: #28b5af
+gray-bg: #222222
+green-bg: #1E2008

@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+    --font-barlow: 'Barlow', 'sans-serif';
+    --breakpoint-xs: 475px;
+    --breakpoint-xxs: 300px;
+    --breakpoint-cstm: 366px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
