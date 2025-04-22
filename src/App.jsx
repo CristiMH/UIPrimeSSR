@@ -11,14 +11,10 @@ import ScrollButton from "./components/ScrollButton";
 
 function App() {
   const [language, setLanguage] = useState('ro');
-  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true);
-
     const storedLanguage = localStorage.getItem('language');
     if (storedLanguage === 'en') setLanguage('en');
-    else setLanguage('ro');
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -27,24 +23,16 @@ function App() {
 
   return (
     <languageContext.Provider value={{ language, setLanguage }}>
-      <Fragment>
-        {
-          hasMounted && (
-            <>
-              <LanguageSelector />
-              <Top onScrollTo={scrollToSection} />
-              <WorkSwiper />
-              <Benefits onScrollTo={scrollToSection} />
-              <Testimonials />
-              <Pricing onScrollTo={scrollToSection} />
-              <Contact onScrollTo={scrollToSection} />
-              <ScrollButton />
-            </>
-          )
-        }
-      </Fragment>
+      <>
+        <LanguageSelector />
+        <Top onScrollTo={scrollToSection} />
+        <WorkSwiper />
+        <Benefits onScrollTo={scrollToSection} />
+        <Testimonials />
+        <Pricing onScrollTo={scrollToSection} />
+        <Contact onScrollTo={scrollToSection} />
+        <ScrollButton />
+      </>
     </languageContext.Provider>
   );
 }
-
-export default App;
