@@ -10,15 +10,18 @@ import languageContext from "./contexts/languageContext";
 import ScrollButton from "./components/ScrollButton";
 
 function App() {
-  const [language, setLanguage] = useState('ro');
-
-  useEffect(() => {
-    const storedLanguage = localStorage.getItem('language');
-    if (storedLanguage === 'en') setLanguage('en');
-  }, []);
+  const [language, setLanguage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('language');
+      return stored === 'en' ? 'en' : 'ro';
+    }
+    return 'ro'; // default for SSR
+  });
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    if (typeof window !== 'undefined') {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
