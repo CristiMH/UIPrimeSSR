@@ -10,7 +10,7 @@ import languageContext from "./contexts/languageContext";
 import ScrollButton from "./components/ScrollButton";
 
 function App() {
-  const [language, setLanguage] = useState('');
+  const [language, setLanguage] = useState('ro');
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
