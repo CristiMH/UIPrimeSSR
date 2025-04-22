@@ -36,3 +36,5 @@ function App() {
     </languageContext.Provider>
   );
 }
+
+export default App;
