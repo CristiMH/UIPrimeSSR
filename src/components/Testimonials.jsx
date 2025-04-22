@@ -1,8 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import languageContext from '../contexts/languageContext';
 
 const Testimonials = () => {
     const { language } = useContext(languageContext);
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
         <section id="testimonials" className='bg-white flex flex-col gap-[50px] pt-[60px] pb-[40px] px-[15px] font-barlow'>

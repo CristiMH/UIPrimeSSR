@@ -15,7 +15,7 @@ function App() {
       const stored = localStorage.getItem('language');
       return stored === 'en' ? 'en' : 'ro';
     }
-    return 'ro'; // default for SSR
+    return 'ro';
   });
 
   const scrollToSection = (sectionId) => {

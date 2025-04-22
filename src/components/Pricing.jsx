@@ -1,9 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import bulletpoint from '../assets/static-images/bulletpoint.svg'
 import languageContext from '../contexts/languageContext'
 
 const Pricing = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
         <section id='pricing' className='pt-[100px] pb-[80px] xs:container xs:mx-auto flex flex-col font-barlow px-[15px] gap-[60px]'>

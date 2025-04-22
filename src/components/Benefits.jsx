@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import thunder from '../assets/static-images/thunder.svg';
 import expert from '../assets/static-images/expert.svg';
 import gear from '../assets/static-images/gear.svg';
@@ -8,6 +8,11 @@ import languageContext from '../contexts/languageContext';
 
 const Benefits = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
         <>

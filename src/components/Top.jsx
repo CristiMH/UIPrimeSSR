@@ -12,16 +12,24 @@ import languageContext from '../contexts/languageContext'
 
 const Top = ({ onScrollTo }) => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [mounted, setMounted] = useState(false);
     const { language } = useContext(languageContext);
 
     useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
         if (isOpen) {
             document.body.classList.add("overflow-hidden");
         } else {
             document.body.classList.remove("overflow-hidden");
         }
     }, [isOpen]);
+
+    if (!mounted) return null;
 
     return (
         <div className='relative font-barlow'>
