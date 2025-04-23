@@ -22,9 +22,6 @@ const Contact = ({ onScrollTo }) => {
 
     const { language } = useContext(languageContext);
 
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
-
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://www.google.com/recaptcha/api.js";
@@ -125,8 +122,6 @@ const Contact = ({ onScrollTo }) => {
             grecaptcha.reset()
         }
     };
-
-    if (!mounted) return null;
 
     return (
         <>

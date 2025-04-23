@@ -5,16 +5,23 @@ import languageContext from '../contexts/languageContext'
 const Pricing = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
 
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return null;
-
     return (
         <section id='pricing' className='pt-[100px] pb-[80px] xs:container xs:mx-auto flex flex-col font-barlow px-[15px] gap-[60px]'>
             <div className="xs:container xs:mx-auto font-barlow flex flex-col gap-[10px]">
-                <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center uppercase text-[#51FFF8]'>Clear & Simple Pricing</p>
-                <p className='text-white text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 '>Simple pricing to level up your brand.</p>
+                <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center uppercase text-[#51FFF8]'>
+                    {language === 'en'
+                        ? 'Clear & Simple Pricing'
+                        : 'Prețuri clare și simple'}
+                </p>
+                <p className='text-white text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 '>
+                    {language === 'en' ? (
+                        'Simple pricing to level up your brand.'
+                    ) : (
+                        <>
+                            Prețuri simple pentru <span className="whitespace-nowrap">a-ți</span> duce brandul la următorul nivel.
+                        </>
+                    )}
+                </p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-[50px] h-full">

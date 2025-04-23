@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ro">
 
 <head>
   <meta charset="UTF-8" />
@@ -43,8 +43,30 @@
 </head>
 
 <body class="bg-[#111204]">
-  <main id="root"></main>
+  <div id="loading-overlay" style="
+    position: fixed;
+    inset: 0;
+    background: #111204;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  "></div>
+
+  <main id="root"><!--app-html--></main>
+  <!--app-head-->
   <script type="module" src="/src/entry-client.jsx"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const overlay = document.getElementById('loading-overlay');
+        if (overlay) {
+          overlay.style.opacity = '0';
+          overlay.addEventListener('transitionend', () => overlay.remove());
+        }
+      }, 200);
+    });
+  </script>
 </body>
 
 </html>

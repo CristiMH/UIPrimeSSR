@@ -8,12 +8,7 @@ import languageContext from '../contexts/languageContext';
 
 const Benefits = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
-
-    const [mounted, setMounted] = useState(false);
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return null;
-
+    
     return (
         <>
             <section id='benefits' className='pt-[60px] xs:container xs:mx-auto flex flex-col font-barlow px-[15px]'>

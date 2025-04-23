@@ -10,13 +10,13 @@ import languageContext from "./contexts/languageContext";
 import ScrollButton from "./components/ScrollButton";
 
 function App() {
-  const [language, setLanguage] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('language');
-      return stored === 'en' ? 'en' : 'ro';
-    }
-    return 'ro';
-  });
+  const [language, setLanguage] = useState(null);
+
+  useEffect(() => {
+    const storedLang = localStorage.getItem('language');
+    if (storedLang)
+      setLanguage(storedLang);
+  }, [])
 
   const scrollToSection = (sectionId) => {
     if (typeof window !== 'undefined') {
