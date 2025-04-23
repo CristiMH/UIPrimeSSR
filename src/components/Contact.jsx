@@ -73,9 +73,9 @@ const Contact = ({ onScrollTo }) => {
         const captchaResponse = grecaptcha.getResponse();
         if (!captchaResponse) {
             if (language === "ro") {
-                toast.error("Adresă de email invalidă!");
+                toast.error("Rezolvați testul captcha!");
             } else {
-                toast.error("Invalid email address!");
+                toast.error("Solve the captcha!");
             }
             setLoading(false);
             return;
