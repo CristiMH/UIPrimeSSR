@@ -19,24 +19,8 @@ const LanguageSelector = () => {
           onChange={handleChange}
           className='text-white w-full text-[12px] xxs:text-[13px] xs:text-[14px] outline-none opacity-[0.6] tracking-wider cursor-pointer'
         >
-
-          {
-            language === 'en' && (
-              <>
-                <option className='bg-[#1E2008]' value="en">English</option>
-                <option className='bg-[#1E2008]' value="ro">Română</option>
-              </>
-            )
-          }
-
-          {
-            language === 'ro' && (
-              <>
-                <option className='bg-[#1E2008]' value="ro">Română</option>
-                <option className='bg-[#1E2008]' value="en">English</option>
-              </>
-            )
-          }
+          <option className='bg-[#1E2008]' value="ro">Română</option>
+          <option className='bg-[#1E2008]' value="en">English</option>
         </select>
       </div>
     </section>
