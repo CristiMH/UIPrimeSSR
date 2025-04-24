@@ -9,6 +9,8 @@ import refresh from '../assets/static-images/refresh.svg'
 import write from '../assets/static-images/write.svg'
 import ResponsiveMenu from './ResponsiveMenu'
 import languageContext from '../contexts/languageContext'
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
 
 const Top = ({ onScrollTo }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -87,33 +89,50 @@ const Top = ({ onScrollTo }) => {
             </nav>
 
             <section className='xs:container xs:mx-auto flex flex-col gap-[35px] sm:gap-[55px] pt-[15px] xxs:pt-[30px] md:pt-[60px] relative xl:max-w-[1058px] px-[10px]'>
-                <h1 className="font-semibold text-white text-[35px] xxs:text-[40px] xs:text-[50px] md:text-[69px] lg:text-[91px] xl:text-[96px] max-w-[1038px] mx-auto text-center">
-                    {language === "en" ? (
-                        <>
-                            Discover The Power Of A <span className="whitespace-nowrap">Well-Structured</span> Website
-                        </>
-                    ) : (
-                        <>
-                            Descoperă Puterea Unui Website Bine Structurat
-                        </>
-                    )}
-                </h1>
+                <motion.div 
+                    variants={fadeIn('up', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}>
+                    <h1 className="font-semibold text-white text-[35px] xxs:text-[40px] xs:text-[50px] md:text-[69px] lg:text-[91px] xl:text-[96px] max-w-[1038px] mx-auto text-center">
+                        {language === "en" ? (
+                            <>
+                                Discover The Power Of A <span className="whitespace-nowrap">Well-Structured</span> Website
+                            </>
+                        ) : (
+                            <>
+                                Descoperă Puterea Unui Website Bine Structurat
+                            </>
+                        )}
+                    </h1>
+                </motion.div>
 
-                <h2 className='text-white opacity-[0.8] text-[16px] xxs:text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] max-w-[450px] sm:max-w-[500px] lg:max-w-[695px] text-center mx-auto'>
-                    {language === "en" ? 
-                    'We increase revenue and ensure sustainable long-term growth for your business through powerful  websites.' 
-                    : 'Creștem veniturile și asigurăm o creștere sustenabilă pe termen lung pentru afacerea ta prin website-uri puternice.'}
-                </h2>
-                <div className="w-full text-center relative">
+                <motion.div
+                    variants={fadeIn('left', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}>
+                    <h2 className='text-white opacity-[0.8] text-[16px] xxs:text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] max-w-[450px] sm:max-w-[500px] lg:max-w-[695px] text-center mx-auto'>
+                        {language === "en" ?
+                            'We increase revenue and ensure sustainable long-term growth for your business through powerful  websites.'
+                            : 'Creștem veniturile și asigurăm o creștere sustenabilă pe termen lung pentru afacerea ta prin website-uri puternice.'}
+                    </h2>
+                </motion.div>
+                <motion.div 
+                    variants={fadeIn('right', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}
+                    className="w-full text-center relative">
                     <button onClick={() => onScrollTo("contact-us")}
                         className='bg-[#51FFF8] hover:bg-[#28b5af] text-[16px] xxs:text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] px-[32px] py-[8px] rounded-[8px] text-[#111204] font-semibold transition-all duration-100 ease-in cursor-pointer'>
-                        {language === 'en' 
-                        ? 'Book a meeting for free'
-                        : 'Programează o întâlnire'}
+                        {language === 'en'
+                            ? 'Book a meeting for free'
+                            : 'Programează o întâlnire'}
                     </button>
                     <img src={Star} alt="" className="absolute hidden sm:block top-[20px] right-[80px] md:top-[20px] md:right-[150px] lg:right-[280px] xl:right-[295px] transform -z-10" />
                     <img src={Star1} alt="" className="absolute hidden sm:block top-[1px] left-[80px] md:top-[1px] md:left-[160px] transform -z-10" />
-                </div>
+                </motion.div>
 
                 <img src={Star2} alt="" className="absolute hidden sm:block top-[60px] right-[20px] md:top-[100px] md:right-[35px] lg:top-[108px] lg:right-[43px] xl:right-[33px] transform -z-10 w-[55px] md:w-[65px] lg:w-auto" />
             </section>

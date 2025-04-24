@@ -12,6 +12,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/ReactToastify.css';
 import spinner from '../assets/static-images/spinner.svg';
 import languageContext from '../contexts/languageContext';
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
 
 const Contact = ({ onScrollTo }) => {
     const form = useRef();
@@ -128,9 +130,15 @@ const Contact = ({ onScrollTo }) => {
             <ToastContainer position="top-right" autoClose={2000} />
 
             <section id="contact-us" className='bg-white flex flex-col pt-[60px] px-[15px] font-barlow'>
-                <p className='text-center text-[29px] xs:text-[33px] mb-[50px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 max-w-[300px] xs:max-w-[400px] mx-auto whitespace-nowrap'>
-                    {language === 'en' ? 'Contact Us' : 'Contactează-ne'}
-                </p>
+                <motion.div
+                    variants={fadeIn('up', 0)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}>
+                    <p className='text-center text-[29px] xs:text-[33px] mb-[50px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 max-w-[300px] xs:max-w-[400px] mx-auto whitespace-nowrap'>
+                        {language === 'en' ? 'Contact Us' : 'Contactează-ne'}
+                    </p>
+                </motion.div>
 
                 {
                     loading && (
@@ -167,38 +175,57 @@ const Contact = ({ onScrollTo }) => {
                     </textarea>
                     <div className="g-recaptcha scale-[0.7] xxs:scale-[0.8] cstm:scale-[1]" data-sitekey={import.meta.env.VITE_SITE_KEY}></div>
                     <div className="flex w-full items-center gap-[25px] justify-center cstm:gap-0 cstm:justify-between flex-wrap">
-                        <p className='text-[14px] text-[#111204] opacity-[0.6] font-medium cstm:max-w-[180px] text-center cstm:text-left'>
-                            {language === 'en' ? 'We will reply via email in the shortest time.' : 'Îți vom răspunde prin email în cel mai scurt timp.'}
-                        </p>
-                        <button type="submit" className='bg-[#51FFF8] hover:bg-[#28b5af] text-black rounded-[30px] font-semibold px-[80px] cstm:px-[50px] py-[9px] cursor-pointer transition-all duration-75 ease-in'>
-                            {language === 'en' ? 'Send' : 'Trimite'}
-                        </button>
+                        <motion.div
+                            variants={fadeIn('right', 0.2)}
+                            initial='hidden'
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0.7 }}>
+                            <p className='text-[14px] text-[#111204] opacity-[0.6] font-medium cstm:max-w-[180px] text-center cstm:text-left'>
+                                {language === 'en' ? 'We will reply via email in the shortest time.' : 'Îți vom răspunde prin email în cel mai scurt timp.'}
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            variants={fadeIn('left', 0.2)}
+                            initial='hidden'
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0.7 }}>
+                            <button type="submit" className='bg-[#51FFF8] hover:bg-[#28b5af] text-black rounded-[30px] font-semibold px-[80px] cstm:px-[50px] py-[9px] cursor-pointer transition-all duration-75 ease-in'>
+                                {language === 'en' ? 'Send' : 'Trimite'}
+                            </button>
+                        </motion.div>
                     </div>
                 </form>
 
-                <div className="xs:container xs:mx-auto rounded-[35px] bg-[#1E2008] py-[80px] flex flex-col z-[1] gap-[30px] justify-center items-center relative px-[30px] top-[70px] cstm:top-[100px]">
-
-                    <p className='text-[34px] sm:text-[54px] lg:text-[64px] text-white font-semibold max-w-[260px] sm:max-w-[500px] text-center leading-10 sm:leading-18 z-[3]'>
-                        {language === 'en'
-                            ? (<>
-                                Become partners with <span className='whitespace-nowrap'>UI Prime</span>
-                            </>)
-                            : (<>
-                                Devino partener cu <span className='whitespace-nowrap'>UI Prime</span>
-                            </>)}
-                    </p>
-                    <p className='font-medium text-[14px] xs:text-[16px] sm:text-[18px] text-white opacity-[0.7] max-w-[260px] text-center z-[3]'>
-                        {language === 'en' ? 'Book a meeting for free and start requesting right away!' : 'Programează o întâlnire gratuită și începem imediat!'}
-                    </p>
-                    <div className='z-[3]'>
-                        <button
-                            onClick={() => onScrollTo("contact-us")}
-                            aria-label={language === 'en' ? 'Contact us' : 'Contactează-ne'}
-                            className='flex gap-[10px] items-center bg-[#51FFF8] hover:bg-[#28b5af] text-[14px] xs:text-[16px] px-[40px] xxs:px-[62px] py-[12px] rounded-[8px] text-[#111204] font-semibold transition-all duration-100 ease-in cursor-pointer'>
-                            {language === 'en' ? 'Contact Us' : 'Contactează-ne'}
-                            <FaArrowAltCircleRight />
-                        </button>
-                    </div>
+                <div className="xs:container xs:mx-auto rounded-[35px] bg-[#1E2008] py-[80px] z-[1] relative px-[30px] top-[70px] cstm:top-[100px]">
+                    <motion.div
+                        variants={fadeIn('up', 0.2)}
+                        initial='hidden'
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.7 }}
+                        className='flex flex-col gap-[30px] justify-center items-center '>
+                        <p className='text-[34px] sm:text-[54px] lg:text-[64px] text-white font-semibold max-w-[260px] sm:max-w-[500px] text-center leading-10 sm:leading-18 z-[3]'>
+                            {language === 'en'
+                                ? (<>
+                                    Become partners with <span className='whitespace-nowrap'>UI Prime</span>
+                                </>)
+                                : (<>
+                                    Devino partener cu <span className='whitespace-nowrap'>UI Prime</span>
+                                </>)
+                            }
+                        </p>
+                        <p className='font-medium text-[14px] xs:text-[16px] sm:text-[18px] text-white opacity-[0.7] max-w-[260px] text-center z-[3]'>
+                            {language === 'en' ? 'Book a meeting for free and start requesting right away!' : 'Programează o întâlnire gratuită și începem imediat!'}
+                        </p>
+                        <div className='z-[3]'>
+                            <button
+                                onClick={() => onScrollTo("contact-us")}
+                                aria-label={language === 'en' ? 'Contact us' : 'Contactează-ne'}
+                                className='flex gap-[10px] items-center bg-[#51FFF8] hover:bg-[#28b5af] text-[14px] xs:text-[16px] px-[40px] xxs:px-[62px] py-[12px] rounded-[8px] text-[#111204] font-semibold transition-all duration-100 ease-in cursor-pointer'>
+                                {language === 'en' ? 'Contact Us' : 'Contactează-ne'}
+                                <FaArrowAltCircleRight />
+                            </button>
+                        </div>
+                    </motion.div>
 
                     <img src={bgEllipse1} alt="" className='h-[420px] sm:h-[500px] w-full absolute top-0 left-1/2 transform z-[2] -translate-x-1/2' />
                 </div>

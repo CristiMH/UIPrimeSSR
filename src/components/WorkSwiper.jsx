@@ -13,6 +13,8 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import { Zoom } from 'yet-another-react-lightbox/plugins'
 import languageContext from '../contexts/languageContext'
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
 
 const images = [first, second, third, fourth, fifth]
 
@@ -30,18 +32,30 @@ const WorkSwiper = () => {
   return (
     <section id="work-samples" className="bg-white flex flex-col gap-[50px] pt-[60px] pb-[40px] px-[15px]">
       <div className="xs:container xs:mx-auto font-barlow flex flex-col gap-[10px]">
-        <p className="text-center text-[33px] xs:text-[36px] sm:text-[45px] md:text-[56px] xl:text-[64px] font-semibold leading-none">
-          {language === 'en' ? (
-            <>Some samples of <span className="whitespace-nowrap">our work</span></>
-          ) : (
-            <>Câteva exemple din lucrările noastre</>
-          )}
-        </p>
-        <h2 className="text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center">
-          {language === 'en'
-            ? 'We help our clients grow their enterprise with clear and modern websites.'
-            : 'Ajutăm clienții noștri să-și dezvolte afacerea cu pagini web calitative și moderne.'}
-        </h2>
+        <motion.div
+          variants={fadeIn('right', 0.2)}
+          initial='hidden'
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}>
+          <p className="text-center text-[33px] xs:text-[36px] sm:text-[45px] md:text-[56px] xl:text-[64px] font-semibold leading-none">
+            {language === 'en' ? (
+              <>Some samples of <span className="whitespace-nowrap">our work</span></>
+            ) : (
+              <>Câteva exemple din lucrările noastre</>
+            )}
+          </p>
+        </motion.div>
+        <motion.div
+          variants={fadeIn('left', 0.2)}
+          initial='hidden'
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}>
+          <h2 className="text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center">
+            {language === 'en'
+              ? 'We help our clients grow their enterprise with clear and modern websites.'
+              : 'Ajutăm clienții noștri să-și dezvolte afacerea cu pagini web calitative și moderne.'}
+          </h2>
+        </motion.div>
       </div>
 
       <p className="text-center text-[14px] sm:text-[16px] opacity-[0.5]">

@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
 import bulletpoint from '../assets/static-images/bulletpoint.svg'
 import languageContext from '../contexts/languageContext'
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
 
 const Pricing = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
@@ -8,20 +10,32 @@ const Pricing = ({ onScrollTo }) => {
     return (
         <section id='pricing' className='pt-[100px] pb-[80px] xs:container xs:mx-auto flex flex-col font-barlow px-[15px] gap-[60px]'>
             <div className="xs:container xs:mx-auto font-barlow flex flex-col gap-[10px]">
-                <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center uppercase text-[#51FFF8]'>
-                    {language === 'en'
-                        ? 'Clear & Simple Pricing'
-                        : 'Prețuri clare și simple'}
-                </p>
-                <p className='text-white text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 '>
-                    {language === 'en' ? (
-                        'Simple pricing to level up your brand.'
-                    ) : (
-                        <>
-                            Prețuri simple pentru <span className="whitespace-nowrap">a-ți</span> duce brandul la următorul nivel.
-                        </>
-                    )}
-                </p>
+                <motion.div
+                    variants={fadeIn('right', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}>
+                    <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center uppercase text-[#51FFF8]'>
+                        {language === 'en'
+                            ? 'Clear & Simple Pricing'
+                            : 'Prețuri clare și simple'}
+                    </p>
+                </motion.div>
+                <motion.div
+                    variants={fadeIn('left', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}>
+                    <p className='text-white text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 '>
+                        {language === 'en' ? (
+                            'Simple pricing to level up your brand.'
+                        ) : (
+                            <>
+                                Prețuri simple pentru <span className="whitespace-nowrap">a-ți</span> duce brandul la următorul nivel.
+                            </>
+                        )}
+                    </p>
+                </motion.div>
             </div>
 
             <div className="flex flex-wrap justify-center gap-[50px] h-full">

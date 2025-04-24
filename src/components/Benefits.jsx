@@ -5,20 +5,32 @@ import gear from '../assets/static-images/gear.svg';
 import touch from '../assets/static-images/touch.svg';
 import value from '../assets/static-images/value.svg';
 import languageContext from '../contexts/languageContext';
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
 
 const Benefits = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
-    
+
     return (
         <>
             <section id='benefits' className='pt-[60px] xs:container xs:mx-auto flex flex-col font-barlow px-[15px]'>
                 <p className='uppercase text-[#51FFF8] font-medium text-[18px] xs:text-[20px] sm:text-[22px] md:text-[24px] text-center'>
                     {language === 'en' ? 'Our capabilities' : 'Capacitățile noastre'}
                 </p>
-                <p className='text-[38px] xs:text-[44px] sm:text-[50px] md:text-[54px] font-semibold text-white text-center'>
-                    {language === 'en' ? 'We can help you with...' : 'Vă putem ajuta cu...'}
-                </p>
-                <div className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
+                <motion.div
+                    variants={fadeIn('right', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}>
+                    <p className='text-[38px] xs:text-[44px] sm:text-[50px] md:text-[54px] font-semibold text-white text-center'>
+                        {language === 'en' ? 'We can help you with...' : 'Vă putem ajuta cu...'}
+                    </p>
+                </motion.div>
+                <motion.div
+                    variants={fadeIn('left', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
                     {[
                         { en: 'System Design', ro: 'Proiectarea sistemelor' },
                         { en: 'Information Architecture', ro: 'Arhitectura informațională' },
@@ -31,7 +43,7 @@ const Benefits = ({ onScrollTo }) => {
                             <h2 className='font-semibold text-black'>{language === 'en' ? item.en : item.ro}</h2>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </section>
 
             <section className='flex flex-col gap-[20px] px-[15px] mt-[100px] xs:mt-[120px] xs:container xs:mx-auto font-barlow'>
