@@ -1,5 +1,3 @@
-"use client"
-
 import * as motion from "motion/react-client"
 import React, { useEffect, useState } from "react"
 
@@ -9,7 +7,7 @@ export default function Reordering() {
     useEffect(() => {
         const interval = setInterval(() => {
             setOrder(prev => shuffle([...prev]))
-        }, 1000)
+        }, 250)
 
         return () => clearInterval(interval)
     }, [])
@@ -29,9 +27,9 @@ export default function Reordering() {
 }
 
 const initialOrder = [
-    "#ff0088",
-    "#dd00ee",
-    "#9911ff",
+    "#51FFF8",
+    "#28b5af",
+    "#1E2008",
     "#0d63f8",
 ]
 
@@ -56,7 +54,7 @@ const container = {
     display: "flex",
     flexWrap: "wrap",
     gap: 10,
-    width: 300,
+    width: 260,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
@@ -64,7 +62,7 @@ const container = {
 
 // Individual item styles
 const item = {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     borderRadius: "10px",
 }

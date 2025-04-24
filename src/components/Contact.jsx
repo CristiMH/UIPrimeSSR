@@ -132,7 +132,7 @@ const Contact = ({ onScrollTo }) => {
 
             <section id="contact-us" className='bg-white flex flex-col pt-[60px] px-[15px] font-barlow'>
                 <motion.div
-                    variants={fadeIn('up', 0)}
+                    variants={fadeIn('up', 0.1)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0.7 }}>
@@ -143,7 +143,7 @@ const Contact = ({ onScrollTo }) => {
 
                 {
                     loading && (
-                        <div className="max-w-[200px] w-full mx-auto">
+                        <div className="min-h-[440px] flex justify-center items-center">
                             <Reordering />
                         </div>
                     )
