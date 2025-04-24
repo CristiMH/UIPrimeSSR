@@ -18,11 +18,18 @@ const Top = ({ onScrollTo }) => {
 
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add("overflow-hidden");
+          document.documentElement.classList.add('no-scroll');
+          document.body.classList.add('no-scroll');
         } else {
-            document.body.classList.remove("overflow-hidden");
+          document.documentElement.classList.remove('no-scroll');
+          document.body.classList.remove('no-scroll');
         }
-    }, [isOpen]);
+      
+        return () => {
+          document.documentElement.classList.remove('no-scroll');
+          document.body.classList.remove('no-scroll');
+        };
+      }, [isOpen]);      
 
     return (
         <div className='relative font-barlow'>
