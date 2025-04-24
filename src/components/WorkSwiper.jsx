@@ -8,12 +8,13 @@ import first from '../assets/static-images/1.png'
 import second from '../assets/static-images/2.png'
 import third from '../assets/static-images/3.png'
 import fourth from '../assets/static-images/4.png'
+import fifth from '../assets/static-images/5.png'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import { Zoom } from 'yet-another-react-lightbox/plugins'
 import languageContext from '../contexts/languageContext'
 
-const images = [first, second, third, fourth]
+const images = [first, second, third, fourth, fifth]
 
 const WorkSwiper = () => {
   const [open, setOpen] = useState(false);
