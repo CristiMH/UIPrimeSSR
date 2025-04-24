@@ -14,6 +14,7 @@ import spinner from '../assets/static-images/spinner.svg';
 import languageContext from '../contexts/languageContext';
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
+import Reordering from './Reordering';
 
 const Contact = ({ onScrollTo }) => {
     const form = useRef();
@@ -142,7 +143,9 @@ const Contact = ({ onScrollTo }) => {
 
                 {
                     loading && (
-                        <img src={spinner} alt="" className='max-w-[200px] w-full mx-auto' />
+                        <div className="max-w-[200px] w-full mx-auto">
+                            <Reordering />
+                        </div>
                     )
                 }
 
