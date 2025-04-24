@@ -18,7 +18,7 @@ const Benefits = ({ onScrollTo }) => {
                     {language === 'en' ? 'Our capabilities' : 'Capacitățile noastre'}
                 </p>
                 <motion.div
-                    variants={fadeIn('right', 0.2)}
+                    variants={fadeIn('up', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0 }}>
@@ -27,7 +27,7 @@ const Benefits = ({ onScrollTo }) => {
                     </p>
                 </motion.div>
                 <motion.div
-                    variants={fadeIn('left', 0.2)}
+                    variants={fadeIn('up', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
@@ -51,10 +51,20 @@ const Benefits = ({ onScrollTo }) => {
                     {language === 'en' ? 'Benefits' : 'Beneficii'}
                 </p>
                 <div className="flex justify-between lg:flex-row flex-col lg:gap-[40px] gap-[15px]">
-                    <h2 className='lg:w-[1600px] xl:w-auto text-[24px] xxs:text-[28px] xs:text-[33px] md:text-[40px] xl:text-[48px] 2xl:text-[53px] font-semibold text-white'>
-                        {language === 'en' ? 'Turn your business into a full-scale online enterprise' : 'Transformă-ți afacerea într-o companie online de succes'}
-                    </h2>
-                    <div className="flex flex-col justify-between lg:gap-0 gap-[15px]">
+                    <motion.div
+                        variants={fadeIn('right', 0.2)}
+                        initial='hidden'
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0 }}>
+                        <h2 className='lg:w-[1600px] xl:w-auto text-[24px] xxs:text-[28px] xs:text-[33px] md:text-[40px] xl:text-[48px] 2xl:text-[53px] font-semibold text-white'>
+                            {language === 'en' ? 'Turn your business into a full-scale online enterprise' : 'Transformă-ți afacerea într-o companie online de succes'}
+                        </h2>
+                    </motion.div>
+                    <motion.div
+                        variants={fadeIn('left', 0.2)}
+                        initial='hidden'
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0 }} className="flex flex-col justify-between lg:gap-0 gap-[15px]">
                         <h2 className='text-[16px] xs:text-[18px] md:text-[20px] xl:text-[24px] font-light text-[#FFFFFF] opacity-[0.8]'>
                             {language === 'en' ? 'Our team ensures an appealing, modern, fast and secure website.' : 'Echipa noastră asigură un website atractiv, modern, rapid și securizat.'}
                         </h2>
@@ -65,7 +75,7 @@ const Benefits = ({ onScrollTo }) => {
                                 {language === 'en' ? 'See pricing' : 'Vezi prețurile'}
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 

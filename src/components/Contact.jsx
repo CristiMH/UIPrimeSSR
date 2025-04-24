@@ -132,7 +132,7 @@ const Contact = ({ onScrollTo }) => {
 
             <section id="contact-us" className='bg-white flex flex-col pt-[60px] px-[15px] font-barlow'>
                 <motion.div
-                    variants={fadeIn('up', 0.1)}
+                    variants={fadeIn('up', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0 }}>
@@ -204,7 +204,7 @@ const Contact = ({ onScrollTo }) => {
                         variants={fadeIn('up', 0.2)}
                         initial='hidden'
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0 }}
+                        viewport={{ once: false, amount: 0.4 }}
                         className='flex flex-col gap-[30px] justify-center items-center '>
                         <p className='text-[34px] sm:text-[54px] lg:text-[64px] text-white font-semibold max-w-[260px] sm:max-w-[500px] text-center leading-10 sm:leading-18 z-[3]'>
                             {language === 'en'
