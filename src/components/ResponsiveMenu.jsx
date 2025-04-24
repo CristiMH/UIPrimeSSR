@@ -24,7 +24,7 @@ const ResponsiveMenu = ({ isOpen, setIsOpen, onScrollTo }) => {
         <>
             <div className={`fixed top-0 z-[49] h-[100vh] w-full bg-black/50 backdrop-blur-md ${isOpen ? 'right-0' : '-right-full'}  transition-all duration-150 ease-in`}></div>
 
-            <div className={`w-[200px] top-0 fixed z-50 xs:w-[250px] bg-black h-[100vh] flex flex-col gap-[45px] pt-[15px] pl-[35px] ${isOpen ? 'left-0 overflow-y-auto' : '-left-full'}  transition-all duration-150 ease-in`}>
+            <div className={`w-[200px] top-0 fixed z-50 xs:w-[250px] bg-black h-[100vh] flex flex-col gap-[45px] pt-[50px] pl-[35px] ${isOpen ? 'left-0 overflow-y-auto' : '-left-full'}  transition-all duration-150 ease-in`}>
                 <img src={UiPrime} alt="UiPrime Logo - Professional Website Development" className='w-[100px] xs:w-[132px]' />
 
                 <ul className='flex flex-col gap-[35px]'>
