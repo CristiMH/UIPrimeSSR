@@ -21,7 +21,7 @@ const Benefits = ({ onScrollTo }) => {
                     variants={fadeIn('right', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}>
+                    viewport={{ once: false, amount: 0 }}>
                     <p className='text-[38px] xs:text-[44px] sm:text-[50px] md:text-[54px] font-semibold text-white text-center'>
                         {language === 'en' ? 'We can help you with...' : 'Vă putem ajuta cu...'}
                     </p>
@@ -30,7 +30,7 @@ const Benefits = ({ onScrollTo }) => {
                     variants={fadeIn('left', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
+                    viewport={{ once: false, amount: 0 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
                     {[
                         { en: 'System Design', ro: 'Proiectarea sistemelor' },
                         { en: 'Information Architecture', ro: 'Arhitectura informațională' },

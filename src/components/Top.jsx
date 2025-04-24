@@ -93,7 +93,7 @@ const Top = ({ onScrollTo }) => {
                     variants={fadeIn('up', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{once: false, amount: 0.7}}>
+                    viewport={{once: false, amount: 0}}>
                     <h1 className="font-semibold text-white text-[35px] xxs:text-[40px] xs:text-[50px] md:text-[69px] lg:text-[91px] xl:text-[96px] max-w-[1038px] mx-auto text-center">
                         {language === "en" ? (
                             <>
@@ -111,7 +111,7 @@ const Top = ({ onScrollTo }) => {
                     variants={fadeIn('left', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{once: false, amount: 0.7}}>
+                    viewport={{once: false, amount: 0}}>
                     <h2 className='text-white opacity-[0.8] text-[16px] xxs:text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] max-w-[450px] sm:max-w-[500px] lg:max-w-[695px] text-center mx-auto'>
                         {language === "en" ?
                             'We increase revenue and ensure sustainable long-term growth for your business through powerful  websites.'
@@ -122,7 +122,7 @@ const Top = ({ onScrollTo }) => {
                     variants={fadeIn('right', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{once: false, amount: 0.7}}
+                    viewport={{once: false, amount: 0}}
                     className="w-full text-center relative">
                     <button onClick={() => onScrollTo("contact-us")}
                         className='bg-[#51FFF8] hover:bg-[#28b5af] text-[16px] xxs:text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] px-[32px] py-[8px] rounded-[8px] text-[#111204] font-semibold transition-all duration-100 ease-in cursor-pointer'>

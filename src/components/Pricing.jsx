@@ -14,7 +14,7 @@ const Pricing = ({ onScrollTo }) => {
                     variants={fadeIn('right', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}>
+                    viewport={{ once: false, amount: 0 }}>
                     <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center uppercase text-[#51FFF8]'>
                         {language === 'en'
                             ? 'Clear & Simple Pricing'
@@ -25,7 +25,7 @@ const Pricing = ({ onScrollTo }) => {
                     variants={fadeIn('left', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}>
+                    viewport={{ once: false, amount: 0 }}>
                     <p className='text-white text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 '>
                         {language === 'en' ? (
                             'Simple pricing to level up your brand.'

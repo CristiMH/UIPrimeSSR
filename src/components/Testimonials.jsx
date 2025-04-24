@@ -16,7 +16,7 @@ const Testimonials = () => {
                     variants={fadeIn('up', 0.2)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}>
+                    viewport={{ once: false, amount: 0 }}>
                     <p className='text-center text-[29px] xs:text-[33px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 max-w-[300px] xs:max-w-[400px] mx-auto'>
                         {language === 'en'
                             ? (

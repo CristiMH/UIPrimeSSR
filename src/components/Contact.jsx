@@ -135,7 +135,7 @@ const Contact = ({ onScrollTo }) => {
                     variants={fadeIn('up', 0.1)}
                     initial='hidden'
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}>
+                    viewport={{ once: false, amount: 0 }}>
                     <p className='text-center text-[29px] xs:text-[33px] mb-[50px] sm:text-[38px] md:text-[42px] xl:text-[48px] font-semibold xs:leading-14 max-w-[300px] xs:max-w-[400px] mx-auto whitespace-nowrap'>
                         {language === 'en' ? 'Contact Us' : 'Contactează-ne'}
                     </p>
@@ -182,7 +182,7 @@ const Contact = ({ onScrollTo }) => {
                             variants={fadeIn('right', 0.2)}
                             initial='hidden'
                             whileInView={"show"}
-                            viewport={{ once: false, amount: 0.7 }}>
+                            viewport={{ once: false, amount: 0 }}>
                             <p className='text-[14px] text-[#111204] opacity-[0.6] font-medium cstm:max-w-[180px] text-center cstm:text-left'>
                                 {language === 'en' ? 'We will reply via email in the shortest time.' : 'Îți vom răspunde prin email în cel mai scurt timp.'}
                             </p>
@@ -191,7 +191,7 @@ const Contact = ({ onScrollTo }) => {
                             variants={fadeIn('left', 0.2)}
                             initial='hidden'
                             whileInView={"show"}
-                            viewport={{ once: false, amount: 0.7 }}>
+                            viewport={{ once: false, amount: 0 }}>
                             <button type="submit" className='bg-[#51FFF8] hover:bg-[#28b5af] text-black rounded-[30px] font-semibold px-[80px] cstm:px-[50px] py-[9px] cursor-pointer transition-all duration-75 ease-in'>
                                 {language === 'en' ? 'Send' : 'Trimite'}
                             </button>
@@ -204,7 +204,7 @@ const Contact = ({ onScrollTo }) => {
                         variants={fadeIn('up', 0.2)}
                         initial='hidden'
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.7 }}
+                        viewport={{ once: false, amount: 0 }}
                         className='flex flex-col gap-[30px] justify-center items-center '>
                         <p className='text-[34px] sm:text-[54px] lg:text-[64px] text-white font-semibold max-w-[260px] sm:max-w-[500px] text-center leading-10 sm:leading-18 z-[3]'>
                             {language === 'en'

@@ -36,7 +36,7 @@ const WorkSwiper = () => {
           variants={fadeIn('right', 0.2)}
           initial='hidden'
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: false, amount: 0 }}>
           <p className="text-center text-[33px] xs:text-[36px] sm:text-[45px] md:text-[56px] xl:text-[64px] font-semibold leading-none">
             {language === 'en' ? (
               <>Some samples of <span className="whitespace-nowrap">our work</span></>
@@ -49,7 +49,7 @@ const WorkSwiper = () => {
           variants={fadeIn('left', 0.2)}
           initial='hidden'
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: false, amount: 0 }}>
           <h2 className="text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-medium text-center">
             {language === 'en'
               ? 'We help our clients grow their enterprise with clear and modern websites.'
