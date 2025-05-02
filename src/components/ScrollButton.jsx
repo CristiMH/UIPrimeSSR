@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 
 const ScrollButton = () => {
 	const [visible, setVisible] = useState(false);
@@ -18,12 +18,12 @@ const ScrollButton = () => {
 
 	return (
 		<div
-			className={`fixed z-50 bottom-6 right-6 border-2 border-[#28b5af] rounded-full bg-[#28b5af] shadow-lg transition-opacity transition-all duration-100 ease-in ${
+			className={`fixed z-50 bottom-24 right-6 w-10 h-10 sm:w-12 sm:h-12 border-[3px] border-[#28b5af] rounded-full bg-[#1E2008] hover:bg-gray-800 transition-all shadow-lg transition-opacity transition-all duration-100 ease-in ${
 				visible ? "opacity-100" : "opacity-0"
-			} cursor-pointer`}
+			} cursor-pointer flex items-center justify-center`}
 			onClick={scrollToTop}
 		>
-			<FaArrowCircleUp className="text-4xl text-[#1E2008] hover:text-green-bg transition-all" />
+			<FaArrowUp className="text-2xl sm:text-3xl text-[#28b5af]" />
 		</div>
 	);
 };

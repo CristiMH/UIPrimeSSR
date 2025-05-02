@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import languageContext from "./contexts/languageContext";
 import ScrollButton from "./components/ScrollButton";
 import { motion, useScroll } from "motion/react"
+import ChatBot from "./components/ChatBot";
 
 function App() {
   const [language, setLanguage] = useState('ro');
@@ -50,6 +51,7 @@ function App() {
         <Testimonials />
         <Pricing onScrollTo={scrollToSection} />
         <Contact onScrollTo={scrollToSection} />
+        <ChatBot />
         <ScrollButton />
       </>
     </languageContext.Provider>
