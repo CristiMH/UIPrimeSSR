@@ -45,7 +45,7 @@ const ChatBot = () => {
 
         try {
             const res = await axios.post(
-                "http://127.0.0.1:8000/api/v1/chat/",
+                "http://uiprimeapi.onrender.com/api/v1/chat/",
                 { query },
                 {
                     headers: {
