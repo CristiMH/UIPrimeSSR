@@ -107,7 +107,7 @@ const ChatBot = () => {
                         className={`fixed flex items-center justify-center bottom-6 right-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#1E2008] hover:bg-gray-800 rounded-full 
                             shadow-lg transition-all duration-300 z-50 cursor-pointer text-xl border-[3px] border-[#28b5af]`}
                     >
-                        <BiSolidMessageRounded className="text-[#28b5af] text-2xl sm:text-3xl"/>
+                        <BiSolidMessageRounded className="text-[#28b5af] text-2xl sm:text-3xl" />
                     </button>
                 </div>
             )}
@@ -130,16 +130,15 @@ const ChatBot = () => {
                             className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                         >
                             <div
-  key={idx}
-  className={`px-4 py-2 rounded-[28px] break-words max-w-[80%] w-fit ${
-    msg.role === "user"
-      ? "bg-[#28b5af] text-white self-end ml-auto text-right"
-      : "bg-gray-200 text-black self-start mr-auto text-left"
-  }`}
-  style={{ width: "fit-content", maxWidth: "70%" }}
->
-  {msg.text}
-</div>
+                                key={idx}
+                                className={`px-4 py-2 rounded-[28px] break-words max-w-[80%] w-fit ${msg.role === "user"
+                                        ? "bg-[#28b5af] text-white self-end ml-auto text-right"
+                                        : "bg-gray-200 text-black self-start mr-auto text-left"
+                                    }`}
+                                style={{ width: "fit-content", maxWidth: "70%" }}
+                            >
+                                {msg.text}
+                            </div>
                         </div>
                     ))}
                     {loading && <TypingIndicator />}
