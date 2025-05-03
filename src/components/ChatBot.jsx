@@ -14,12 +14,27 @@ const ChatBot = () => {
     const bottomRef = useRef(null);
 
     useEffect(() => {
+        const verifyWidth = () => {
+            if (window.innerWidth < 640) {
+                if (open) {
+                    document.documentElement.classList.add('no-scroll');
+                    document.body.classList.add('no-scroll');
+                } else {
+                    document.documentElement.classList.remove('no-scroll');
+                    document.body.classList.remove('no-scroll');
+                }
+            }
+        };
+
+        verifyWidth();
+    }, [open]);
+
+    useEffect(() => {
         if (bottomRef.current) {
             bottomRef.current.scrollIntoView({ behavior: "smooth" });
         }
     }, [responses, loading]);
 
-    // Bot greeting message
     useEffect(() => {
         setResponses([
             {
