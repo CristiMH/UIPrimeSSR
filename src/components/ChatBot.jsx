@@ -98,7 +98,7 @@ const ChatBot = () => {
             )}
 
             <div
-                className={`fixed sm:right-[90px] w-full sm:w-[350px] h-[100vh] sm:h-[500px] bg-white sm:rounded-xl shadow-xl flex flex-col z-[999] transition-all duration-200 ease-in-out ${open ? "opacity-100 bottom-0" : "-bottom-[200vh] opacity-50 pointer-events-none"}`}
+                className={`fixed sm:right-[90px] w-full sm:w-[350px] h-[100vh] sm:h-[500px] bg-white sm:rounded-xl shadow-xl flex flex-col z-[999] transition-all duration-200 ease-in-out ${open ? "opacity-100 top-0" : "-top-[200vh] opacity-50 pointer-events-none"}`}
             >
                 <div className="bg-white text-white border-b border-gray-300 p-4 rounded-t-xl flex justify-between items-center">
                     <div className="flex items-center gap-[10px]">
