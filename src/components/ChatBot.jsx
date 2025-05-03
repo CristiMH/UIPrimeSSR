@@ -60,7 +60,7 @@ const ChatBot = () => {
 
         try {
             const res = await axios.post(
-                "http://uiprimeapi.onrender.com/api/v1/chat/",
+                "https://uiprimeapi.onrender.com/api/v1/chat/",
                 { query },
                 {
                     headers: {
