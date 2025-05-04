@@ -75,7 +75,6 @@ const ChatBot = () => {
                 { role: "assistant", text: res.data.answer },
             ]);
         } catch (error) {
-            console.error("API Error:", error);
             setResponses((prev) => [
                 ...prev,
                 { role: "assistant", text: language === "ro" ? "A apărut o eroare." : "Something went wrong." },
