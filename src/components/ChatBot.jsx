@@ -61,7 +61,9 @@ const ChatBot = () => {
         try {
             const res = await axios.post(
                 "https://uiprimeapi.onrender.com/api/v1/chat/",
-                { query },
+                {   query, 
+                    language 
+                },
                 {
                     headers: {
                         "Content-Type": "application/json",
