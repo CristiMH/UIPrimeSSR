@@ -33,10 +33,9 @@ const Benefits = ({ onScrollTo }) => {
                     viewport={{ once: false, amount: 0 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
                     {[
                         { en: 'System Design', ro: 'Proiectarea sistemelor' },
-                        { en: 'Information Architecture', ro: 'Arhitectura informațională' },
                         { en: 'Web Programming', ro: 'Programare web' },
-                        { en: 'CRM, CMS & ERP Systems', ro: 'Sisteme CRM, CMS și ERP' },
                         { en: 'SEO Integration', ro: 'Integrare SEO' },
+                        { en: 'Web Services', ro: 'Servicii Web' },
                         { en: 'Hosting', ro: 'Hosting' }
                     ].map((item, idx) => (
                         <div key={idx} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px]">
