@@ -41,8 +41,8 @@ const ChatBot = () => {
                 role: "assistant",
                 text:
                     language === "ro"
-                        ? "Salut! Cu ce te pot ajuta?"
-                        : "Hello, how can I help you?",
+                        ? "Salut! Sunt aici pentru a-ți oferi orice informație despre serviciile noastre. Cu ce pot să te ajut?"
+                        : "Hello! I'm here to help with any information about our services. How can I assist you?",
             },
         ]);
     }, [language]);
