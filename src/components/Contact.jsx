@@ -263,7 +263,7 @@ const Contact = ({ onScrollTo }) => {
                                 <CiPhone className='text-2xl' />
                                 + (373) 600 53 029
                             </a>
-                            <a href='https://www.instagram.com/uiprime61/?utm_source=ig_web_button_share_sheet' target='_blank' className="flex gap-[10px] text-white items-center justify-center xs:justify-start">
+                            <a href='https://www.instagram.com/uiprime.online/' target='_blank' className="flex gap-[10px] text-white items-center justify-center xs:justify-start">
                                 <FaInstagram className='text-2xl' />
                                 UI Prime
                             </a>
