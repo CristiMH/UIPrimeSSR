@@ -6,9 +6,12 @@ import App from './App'
  * @param {string} _url
  */
 export function render(_url) {
+
+  const language = _url.startsWith('/en') ? 'en' : 'ro';
+
   const html = renderToString(
     <StrictMode>
-      <App />
+      <App language={language}/>
     </StrictMode>,
   )
   return { html }

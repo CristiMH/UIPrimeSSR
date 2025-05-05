@@ -11,8 +11,8 @@ import ScrollButton from "./components/ScrollButton";
 import { motion, useScroll } from "motion/react"
 import ChatBot from "./components/ChatBot";
 
-function App() {
-  const [language, setLanguage] = useState('ro');
+function App({ language: initialLanguage }) {
+  const [language, setLanguage] = useState(initialLanguage || 'ro');
   const { scrollYProgress } = useScroll()
 
   useEffect(() => {
