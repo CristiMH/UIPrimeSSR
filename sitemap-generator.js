@@ -7,7 +7,7 @@ async function generateSitemap() {
     { url: "/", changefreq: "daily", priority: 1.0 }
   ];
 
-  const stream = new SitemapStream({ hostname: "https://www.uiprime.online" });
+  const stream = new SitemapStream({ hostname: "https://uiprime.online" });
   const writableStream = createWriteStream("./public/sitemap.xml");
 
   const sitemapPromise = streamToPromise(Readable.from(links).pipe(stream));
