@@ -12,14 +12,8 @@ import { motion, useScroll } from "motion/react"
 import ChatBot from "./components/ChatBot";
 
 function App({ language: initialLanguage }) {
-  const [language, setLanguage] = useState(initialLanguage || 'ro');
-  const { scrollYProgress } = useScroll()
-
-  useEffect(() => {
-    const storedLang = localStorage.getItem('language');
-    if (storedLang)
-      setLanguage(storedLang);
-  }, [])
+  const [language, setLanguage] = useState(initialLanguage);
+  const { scrollYProgress } = useScroll();
 
   const scrollToSection = (sectionId) => {
     if (typeof window !== 'undefined') {

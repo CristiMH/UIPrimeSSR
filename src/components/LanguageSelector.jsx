@@ -1,12 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
 import languageContext from '../contexts/languageContext'
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const LanguageSelector = () => {
-  const { language, setLanguage } = useContext(languageContext);
+  const { language } = useContext(languageContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
-    setLanguage(e.target.value);
-    localStorage.setItem('language', e.target.value)
+    const selectedLang = e.target.value;
+
+    const currentPath = location.pathname;
+    const newPath =
+      selectedLang === 'en'
+        ? currentPath.startsWith('/en') ? currentPath : '/en' + currentPath
+        : currentPath.replace(/^\/en/, '') || '/';
+
+    navigate(newPath, { replace: true });
   };
 
   return (
