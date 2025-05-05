@@ -2,20 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import languageContext from '../contexts/languageContext'
 
 const LanguageSelector = () => {
-  const { language } = useContext(languageContext);
+  const { language, setLanguage } = useContext(languageContext);
 
   const handleChange = (e) => {
-    const selectedLang = e.target.value;
-
-    const path = window.location.pathname;
-    const newPath =
-      selectedLang === 'en'
-        ? path.startsWith('/en') ? path : '/en' + path
-        : path.replace(/^\/en/, '') || '/';
-
-    if (newPath !== path) {
-      window.location.href = newPath;
-    }
+    setLanguage(e.target.value);
+    localStorage.setItem('language', e.target.value)
   };
 
   return (
