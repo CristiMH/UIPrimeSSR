@@ -138,7 +138,7 @@ const ChatBot = () => {
                                     }`}
                                 style={{ width: "fit-content", maxWidth: "70%" }}
                             >
-                                {msg.text}
+                                <div dangerouslySetInnerHTML={{ __html: msg.text }} />
                             </div>
                         </div>
                     ))}
