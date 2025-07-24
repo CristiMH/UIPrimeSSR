@@ -42,7 +42,7 @@ const ResponsiveMenu = ({ isOpen, setIsOpen, onScrollTo }) => {
                     </li>
                     <li className='text-white text-[18px] xs:text-[20px] opacity-[0.7] cursor-pointer hover:opacity-[1] duration-75 ease-in transition-all group relative'>
                         <button onClick={() => {setIsOpen(false); onScrollTo("benefits");}} className="block w-full h-full text-left cursor-pointer" aria-label="See what benefits you could recieve">
-                            {language === 'en' ? 'Benefits' : 'Beneficii'}
+                            {language === 'en' ? 'Services' : 'Servicii'}
                         </button>
                         <span className='block absolute -bottom-1 left-0 w-0 h-[2px] opacity-[0.8] bg-white transition-all duration-150 ease-in group-hover:w-full'></span>
                     </li>

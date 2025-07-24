@@ -1,15 +1,24 @@
 import React, { useContext, useState, useEffect } from 'react';
-import thunder from '../assets/static-images/thunder.svg';
-import expert from '../assets/static-images/expert.svg';
-import gear from '../assets/static-images/gear.svg';
-import touch from '../assets/static-images/touch.svg';
-import value from '../assets/static-images/value.svg';
 import languageContext from '../contexts/languageContext';
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
 
 const Benefits = ({ onScrollTo }) => {
     const { language } = useContext(languageContext);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [infoRO, setInfoRO] = useState([]);
+    const [infoEN, setInfoEN] = useState([]);
+
+    useEffect(() => {
+        fetch('/website_services_descriptions.json')
+            .then((res) => res.json())
+            .then((data) => {
+                setInfoRO(data.infoRO);
+                setInfoEN(data.infoEN);
+            })
+            .catch((err) => console.error('Failed to load descriptions:', err));
+    }, []);
+
 
     return (
         <>
@@ -32,85 +41,22 @@ const Benefits = ({ onScrollTo }) => {
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
                     {[
-                        { en: 'System Design', ro: 'Proiectarea sistemelor' },
-                        { en: 'Web Programming', ro: 'Programare web' },
+                        { en: 'Website Development', ro: 'Creare Website' },
+                        { en: 'Website Maintenance', ro: 'Mentenanță Website' },
                         { en: 'SEO Integration', ro: 'Integrare SEO' },
-                        { en: 'Web Services', ro: 'Servicii Web' },
-                        { en: 'Hosting', ro: 'Hosting' }
+                        { en: 'Web Hosting', ro: 'Web Hosting' },
+                        { en: 'Databases', ro: 'Baze de date' }
                     ].map((item, idx) => (
-                        <div key={idx} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px]">
+                        <div key={idx} onClick={() => setCurrentIndex(idx)} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer hover:bg-[#28b5af] transition-all duration-75 ease-in">
                             <h2 className='font-semibold text-black'>{language === 'en' ? item.en : item.ro}</h2>
                         </div>
                     ))}
                 </motion.div>
             </section>
 
-            <section className='flex flex-col gap-[20px] px-[15px] mt-[100px] xs:mt-[120px] xs:container xs:mx-auto font-barlow'>
-                <p className='text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] text-[#51FFF8] font-medium'>
-                    {language === 'en' ? 'Services' : 'Servicii'}
-                </p>
-                <div className="flex justify-between xl:flex-row flex-col xl:gap-[40px] gap-[15px]">
-                    <motion.div
-                        variants={fadeIn('right', 0.2)}
-                        initial='hidden'
-                        whileInView={"show"}
-                        viewport={{ once: false, amount: 0 }}>
-                        <h2 className='lg:w-[1600px] xl:w-auto text-[24px] xxs:text-[28px] xs:text-[33px] md:text-[40px] xl:text-[48px] 2xl:text-[53px] font-semibold text-white'>
-                            {language === 'en' ? 'Turn your business into a full-scale online enterprise' : 'Transformă-ți afacerea într-o companie online de succes'}
-                        </h2>
-                    </motion.div>
-                    <motion.div
-                        variants={fadeIn('left', 0.2)}
-                        initial='hidden'
-                        whileInView={"show"}
-                        viewport={{ once: false, amount: 0 }} className="flex flex-col justify-between lg:gap-0 gap-[15px]">
-                        <h2 className='text-[16px] xs:text-[18px] md:text-[20px] xl:text-[24px] font-light text-[#FFFFFF] opacity-[0.8]'>
-                            {language === 'en' ? 'Our team ensures an appealing, modern, fast and secure website.' : 'Echipa noastră asigură un website atractiv, modern, rapid și securizat.'}
-                        </h2>
-                        <div className='relative top-[25px] xl:-top-[10px]'>
-                            <button
-                                onClick={() => onScrollTo("pricing")}
-                                className='bg-[#51FFF8] hover:bg-[#28b5af] text-[14px] xs:text-[16px] lg:text-[18px] xl:text-[22px] 2xl:text-[24px] px-[32px] py-[8px] rounded-[8px] text-[#111204] font-semibold transition-all duration-100 ease-in cursor-pointer'>
-                                {language === 'en' ? 'See pricing' : 'Vezi prețurile'}
-                            </button>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            <section className='font-barlow flex flex-col items-center xl:items-start xl:flex-row xl:flex-wrap justify-center gap-[80px] 2xl:gap-[120px] px-[15px] pt-[120px] xs:pt-[140px] pb-[100px] xs:container xs:mx-auto'>
-                {[
-                    {
-                        img: touch, en: 'Fast. Responsive. Reliable.', ro: 'Rapid. Responsiv. Eficient.',
-                        enDesc: 'By leveraging modern web technologies and optimizing performance, we ensure your site is responsive, engaging, and efficient.',
-                        roDesc: 'Prin utilizarea tehnologiilor web moderne și optimizarea performanței, ne asigurăm că site-ul tău este responsiv, atractiv și eficient.'
-                    },
-                    {
-                        img: expert, en: 'Expert turnovers', ro: 'Rezultate excepționale',
-                        enDesc: 'With a focus on efficiency and precision, we deliver high-quality websites within set deadlines, allowing your business to launch and grow without unnecessary delays.',
-                        roDesc: 'Cu un accent pe eficiență și precizie, livrăm site-uri web de calitate înaltă în termenii stabiliți, permițând afacerii tale să se lanseze și să crească fără întârzieri inutile.'
-                    },
-                    {
-                        img: gear, en: 'Customized for you', ro: 'Personalizat pentru tine',
-                        enDesc: 'Our web solutions are fully customized to meet your unique business needs. From design to functionality, we work to create a website that reflects your brand and enhances your online presence.',
-                        roDesc: 'Soluțiile noastre web sunt complet personalizate pentru a răspunde nevoilor unice ale afacerii tale. De la design la funcționalitate, lucrăm pentru a crea un site care reflectă brandul tău și îți îmbunătățește prezența online.'
-                    }
-                ].map((benefit, index) => (
-                    <div key={index} className="flex flex-col gap-[20px] xl:max-w-[310px]">
-                        <img src={benefit.img} alt="" className='w-[50px] h-[50px]' />
-                        <p className='text-[26px] font-medium text-white'>{language === 'en' ? benefit.en : benefit.ro}</p>
-                        <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
-                            {language === 'en' ? benefit.enDesc : benefit.roDesc}
-                        </h2>
-                    </div>
-                ))}
-                <div className="flex flex-col gap-[20px] xl:max-w-[1080px] 2xl:max-w-[1170px]">
-                    <img src={thunder} alt="" className='w-[50px] h-[50px]' />
-                    <p className='text-[26px] font-medium text-white'>{language === 'en' ? 'Mentenance, support and administration' : 'Mentenanță, suport și administrare'}</p>
-                    <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
-                        {language === 'en' ? 'We ensure the operation, updates, and security of your website through professional maintenance, support, and management services. Each package includes a free maintenance period, after which services can be extended starting from €50 per month, depending on the selected package. We offer affordable solutions that keep your website fully functional, secure, and compatible with the latest technologies. Regular maintenance prevents technical errors, reduces security risks, improves overall performance, and ensures a consistent experience for users. We continuously monitor your website to prevent downtime and respond quickly to any issues, ensuring your site remains online, stable, and optimized at all times.' : 'Asigurăm funcționarea, actualizarea și securitatea site-ului tău prin servicii profesionale de mentenanță, suport și administrare. Fiecare pachet include o perioadă gratuită de mentenanță, iar după această perioadă serviciile pot fi extinse începând de la 50€ pe lună, în funcție de pachetul ales. Oferim soluții accesibile care mențin site-ul tău în permanență funcțional, sigur și compatibil cu cele mai noi tehnologii. Mentenanța regulată previne erorile tehnice, reduce riscurile de securitate, îmbunătățește performanța generală și asigură o experiență constantă pentru utilizatori. Monitorizăm în permanență funcționarea site-ului pentru a preveni perioadele de inactivitate și a interveni rapid în cazul unor probleme, astfel încât website-ul tău să fie mereu online, stabil și optimizat.'}
-                    </h2>
-                </div>
+            <section className='text-white font-barlow flex flex-col items-center justify-center gap-[30px] px-[15px] pt-[80px] pb-[100px] xs:container xs:mx-auto'>
+                <p className='text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-[#51FFF8] text-center'>{language === 'en' ? infoEN[currentIndex].title : infoRO[currentIndex].title}</p>
+                <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] text-center  max-w-[1000px]'>{language === 'en' ? infoEN[currentIndex].descriere : infoRO[currentIndex].descriere}</p>
             </section>
         </>
     );

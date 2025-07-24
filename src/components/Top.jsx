@@ -52,7 +52,7 @@ const Top = ({ onScrollTo }) => {
                         </li>
                         <li className='text-white text-[20px] opacity-[0.7] cursor-pointer hover:opacity-[1] duration-75 ease-in transition-all group relative'>
                             <button onClick={() => onScrollTo("benefits")} className='cursor-pointer' aria-label="See what benefits you could recieve">
-                                {language === 'en' ? 'Benefits' : 'Beneficii'}
+                                {language === 'en' ? 'Services' : 'Servicii'}
                             </button>
                             <span className='block absolute -bottom-1 left-0 w-0 h-[2px] opacity-[0.8] bg-white transition-all duration-150 ease-in group-hover:w-full'></span>
                         </li>
@@ -157,8 +157,8 @@ const Top = ({ onScrollTo }) => {
                     <div className="flex flex-col justify-between lg:gap-0 gap-[15px]">
                         <h2 className='text-[16px] xs:text-[18px] md:text-[20px] xl:text-[24px] font-light text-[#FFFFFF] opacity-[0.8]'>
                             {language === 'en'
-                            ? 'Grow your brand with high-quality websites for a minimal fee. Work with experienced designers and engineers. Contact us and make as many requests as you need - no limits.'
-                            : 'Dezvoltă-ți brandul cu un website de calitate înaltă la un preț redus. Lucrează cu designeri și ingineri cu experiență. Contactează-ne și fă oricâte cereri ai nevoie – fără limite.'}
+                            ? 'Grow your brand with high-quality websites for a minimal fee. Work with experienced designers and engineers. Contact us to develop your business.'
+                            : 'Dezvoltă-ți brandul cu un website de calitate înaltă la un preț redus. Lucrează cu designeri și ingineri cu experiență. Contactează-ne pentru a-ți dezvolta afacerea.'}
                         </h2>
                         <div onClick={() => onScrollTo("pricing")} className='relative lg:-top-[10px] xl:-top-[13px] 2xl:-top-[15px]'>
                             <button
@@ -173,23 +173,33 @@ const Top = ({ onScrollTo }) => {
             </section>
 
             <section className='flex flex-col items-center md:items-start md:flex-row md:flex-wrap justify-center gap-[80px] xl:gap-[150px] 2xl:gap-[200px] px-[15px] pt-[100px] xs:pt-[120px] pb-[100px] xs:container xs:mx-auto'>
-                <div className="flex flex-col gap-[20px] max-w-[283px] lg:mr-[120px] xl:mr-0">
+                <motion.div 
+                    variants={fadeIn('up', 0.2)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}
+                    className="flex flex-col gap-[20px] max-w-[300px] lg:mr-[120px] xl:mr-0">
                     <div className="bg-[#51FFF8] w-[93px] h-[93px] flex items-center justify-center rounded-full">
                         <img src={rocket} alt="" />
                     </div>
                     <p className='text-[26px] font-medium text-white'>
                         {language === 'en' 
-                        ? 'Contact us & get started'
+                        ? 'Contact us & et started'
                         : 'Contactează-ne & începe'}
                     </p>
                     <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
                         {language === 'en'
-                        ? 'Submit as many design tasks as you need until the perfection is accomplished, without worrying about additional fees.'
-                        : 'Trimite oricâte modificări de design ai nevoie până când perfecțiunea este îndeplinită, fără griji legate de costuri suplimentare'}
+                        ? 'We define the ideas related to design, structure, and functionality, providing the foundation for website development.'
+                        : 'Stabilim ideile legate de design, structură și funcționalitate, oferind baza pentru dezvoltarea website-ului.'}
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col gap-[20px] max-w-[283px]">
+                <motion.div 
+                    variants={fadeIn('up', 0.4)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}
+                    className="flex flex-col gap-[20px] max-w-[300px]">
                     <div className="bg-[#51FFF8] w-[93px] h-[93px] flex items-center justify-center rounded-full">
                         <img src={write} alt="" />
                     </div>
@@ -200,12 +210,17 @@ const Top = ({ onScrollTo }) => {
                     </p>
                     <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
                         {language === 'en'
-                        ? 'Our engineers start the process of transforming the design to a fully  functional  website.'
-                        : 'Inginerii noștri încep procesul de transformare a design-ului într-un website complet funcțional'}
+                        ? 'Our engineers start the process of transforming the ideas into a fully  functional  website.'
+                        : 'Inginerii noștri încep procesul de transformare a ideilor într-un website complet funcțional.'}
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col gap-[20px] max-w-[283px]">
+                <motion.div 
+                    variants={fadeIn('up', 0.6)}
+                    initial='hidden'
+                    whileInView={"show"}
+                    viewport={{once: false, amount: 0.7}}
+                    className="flex flex-col gap-[20px] max-w-[300px]">
                     <div className="bg-[#51FFF8] w-[93px] h-[93px] flex items-center justify-center rounded-full">
                         <img src={refresh} alt="" />
                     </div>
@@ -219,7 +234,7 @@ const Top = ({ onScrollTo }) => {
                         ? 'Our engineers handle the hosting setup for your website.'
                         : 'Inginerii noștri se ocupă de hosting, astfel încât website-ul tău să fie online rapid.'}
                     </h2>
-                </div>
+                </motion.div>
             </section>
 
             <img src={bgEllipse1} alt="" className="absolute top-0 left-1/2 transform -translate-x-1/2 -z-10 w-[1112px] h-[791px]"  fetchpriority="high"/>

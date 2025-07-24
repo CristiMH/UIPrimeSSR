@@ -1,0 +1,46 @@
+{
+  "infoRO": [
+    {
+      "title": "Creare website",
+      "descriere": "Oferim servicii complete de creare website, de la concept și structură, până la design personalizat și dezvoltare front-end și back-end. Realizăm site-uri moderne, responsive, compatibile cu toate dispozitivele și optimizate pentru viteză și experiența utilizatorului. Fie că este vorba de un site de prezentare, un portofoliu, un blog sau un magazin online, adaptăm funcționalitățile la cerințele afacerii tale, integrăm formulare, secțiuni dinamice, galerii, sistem de administrare și orice altă componentă necesară."
+    },
+    {
+      "title": "Mentenanță, administrare și suport",
+      "descriere": "Asigurăm mentenanță tehnică completă pentru ca site-ul tău să funcționeze în permanență în parametri optimi. Serviciile noastre includ actualizarea platformei și modulelor, monitorizarea performanței și a securității, realizarea copiilor de siguranță periodice, rezolvarea erorilor și intervenții rapide în cazul apariției unor probleme. Oferim suport tehnic prompt prin e-mail, telefon sau chat, astfel încât orice solicitare să fie tratată rapid și eficient. În plus, ne ocupăm de gestionarea conținutului și administrarea zilnică a platformei, dacă este necesar."
+    },
+    {
+      "title": "Integrare SEO",
+      "descriere": "Optimizăm site-ul atât din punct de vedere tehnic, cât și la nivel de conținut, pentru a fi indexat corect de motoarele de căutare. Realizăm structurarea corectă a titlurilor, meta-descrierilor și linkurilor, îmbunătățim viteza de încărcare, configurăm sitemap-ul și fișierele robots.txt și integrăm instrumente precum Google Search Console. Oferim consultanță privind cuvintele-cheie, optimizăm imaginile și structura conținutului pentru a crește vizibilitatea în căutări și a atrage trafic organic de calitate."
+    },
+    {
+      "title": "Web hosting și înregistrarea domeniilor",
+      "descriere": "Punem la dispoziție soluții de găzduire web fiabile și rapide, configurate în funcție de nevoile site-ului tău. Ne ocupăm de achiziția și înregistrarea domeniului dorit, configurarea serverului, a adreselor de e-mail și a certificatului SSL pentru o conexiune securizată. Găzduirea include suport tehnic și mentenanță de bază, backup automat și monitorizarea funcționării site-ului 24/7. Toate acestea pentru a asigura o lansare fără probleme și o funcționare stabilă în timp."
+    },
+    {
+      "title": "Creare și administrare a bazelor de date",
+      "descriere": "Proiectăm și dezvoltăm baze de date eficiente, scalabile și securizate, adaptate la specificul proiectului tău web. Folosim soluții moderne de gestiune (MySQL, PostgreSQL, MongoDB etc.), normalizăm structura datelor pentru performanță optimă și ne asigurăm că toate conexiunile sunt protejate. Administrăm bazele de date prin backup-uri regulate, monitorizare și intervenții rapide în caz de necesitate. Ne ocupăm și de integrarea cu panoul de administrare al site-ului, astfel încât datele să fie ușor accesibile și gestionabile."
+    }
+  ],
+  "infoEN": [
+    {
+      "title": "Website development",
+      "descriere": "We offer complete website development services, from concept and structure to custom design and full front-end and back-end implementation. We build modern, responsive websites optimized for all devices, speed, and user experience. Whether it’s a presentation website, portfolio, blog, or e-commerce platform, we tailor the functionality to match your business needs, integrating forms, dynamic sections, galleries, admin panels, and any other required components."
+    },
+    {
+      "title": "Maintenance, administration and support",
+      "descriere": "We provide full technical maintenance to ensure your website always performs at its best. Our services include platform and plugin updates, performance and security monitoring, regular backups, error resolution, and quick interventions when needed. We offer fast and reliable support via email, phone, or chat, ensuring all requests are addressed efficiently. Additionally, we handle content updates and daily administration when required, so your platform remains up to date and stable."
+    },
+    {
+      "title": "SEO integration",
+      "descriere": "We optimize your website both technically and content-wise to ensure proper indexing by search engines. This includes clean structuring of titles, meta descriptions, and links, improving load speed, configuring sitemaps and robots.txt files, and integrating tools like Google Search Console. We provide keyword consulting, optimize images and page structure to increase visibility in search results and attract high-quality organic traffic."
+    },
+    {
+      "title": "Web hosting and domain registration",
+      "descriere": "We provide reliable and fast web hosting solutions tailored to your website’s needs. We handle the purchase and registration of your preferred domain, configure the server, email accounts, and SSL certificate for secure access. Hosting includes technical support, basic maintenance, automatic backups, and 24/7 uptime monitoring to ensure a smooth launch and stable long-term performance."
+    },
+    {
+      "title": "Database development and administration",
+      "descriere": "We design and build secure, scalable, and efficient databases tailored to your project’s specific needs. Using modern management solutions (MySQL, PostgreSQL, MongoDB, etc.), we normalize data structures for optimal performance and ensure secure connections. We manage databases through regular backups, monitoring, and quick interventions when necessary, and we integrate them with your website's admin panel for easy data access and control."
+    }
+  ]
+}
