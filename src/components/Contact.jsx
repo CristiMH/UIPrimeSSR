@@ -255,9 +255,9 @@ const Contact = ({ onScrollTo }) => {
                             <SiMysql />
                         </div>
                         <div className="flex flex-col gap-[20px]">
-                            <a href='mailto:uiprime61@gmail.com' className="flex gap-[10px] text-white items-center justify-center xs:justify-start">
+                            <a href='mailto:uiprime.online@gmail.com' className="flex gap-[10px] text-white items-center justify-center xs:justify-start">
                                 <MdOutlineEmail className='text-xl' />
-                                uiprime61@gmail.com
+                                uiprime.online@gmail.com
                             </a>
                             <a href='tel:+37360053029' className="flex gap-[10px] text-white items-center justify-center xs:justify-start">
                                 <CiPhone className='text-2xl' />

@@ -222,7 +222,7 @@ const Top = ({ onScrollTo }) => {
                 </div>
             </section>
 
-            <img src={bgEllipse1} alt="" className="absolute top-0 left-1/2 transform -translate-x-1/2 -z-10 w-[1112px] h-[791px]" />
+            <img src={bgEllipse1} alt="" className="absolute top-0 left-1/2 transform -translate-x-1/2 -z-10 w-[1112px] h-[791px]"  fetchpriority="high"/>
         </div>
     )
 }

@@ -47,9 +47,9 @@ const Benefits = ({ onScrollTo }) => {
 
             <section className='flex flex-col gap-[20px] px-[15px] mt-[100px] xs:mt-[120px] xs:container xs:mx-auto font-barlow'>
                 <p className='text-[18px] xs:text-[20px] md:text-[22px] lg:text-[24px] text-[#51FFF8] font-medium'>
-                    {language === 'en' ? 'Benefits' : 'Beneficii'}
+                    {language === 'en' ? 'Services' : 'Servicii'}
                 </p>
-                <div className="flex justify-between lg:flex-row flex-col lg:gap-[40px] gap-[15px]">
+                <div className="flex justify-between xl:flex-row flex-col xl:gap-[40px] gap-[15px]">
                     <motion.div
                         variants={fadeIn('right', 0.2)}
                         initial='hidden'
@@ -78,7 +78,7 @@ const Benefits = ({ onScrollTo }) => {
                 </div>
             </section>
 
-            <section className='font-barlow flex flex-col items-center md:items-start md:flex-row md:flex-wrap justify-center gap-[80px] 2xl:gap-[120px] px-[15px] pt-[120px] xs:pt-[140px] pb-[100px] xs:container xs:mx-auto'>
+            <section className='font-barlow flex flex-col items-center xl:items-start xl:flex-row xl:flex-wrap justify-center gap-[80px] 2xl:gap-[120px] px-[15px] pt-[120px] xs:pt-[140px] pb-[100px] xs:container xs:mx-auto'>
                 {[
                     {
                         img: touch, en: 'Fast. Responsive. Reliable.', ro: 'Rapid. Responsiv. Eficient.',
@@ -94,19 +94,9 @@ const Benefits = ({ onScrollTo }) => {
                         img: gear, en: 'Customized for you', ro: 'Personalizat pentru tine',
                         enDesc: 'Our web solutions are fully customized to meet your unique business needs. From design to functionality, we work to create a website that reflects your brand and enhances your online presence.',
                         roDesc: 'Soluțiile noastre web sunt complet personalizate pentru a răspunde nevoilor unice ale afacerii tale. De la design la funcționalitate, lucrăm pentru a crea un site care reflectă brandul tău și îți îmbunătățește prezența online.'
-                    },
-                    {
-                        img: thunder, en: 'Top-notch quality', ro: 'Calitate înaltă',
-                        enDesc: 'High-end work from a dedicated team of experienced engineers that have the objective of seeing your brand thrive.',
-                        roDesc: 'Lucrări de înaltă calitate realizate de o echipă dedicată de ingineri cu experiență, având ca obiectiv dezvoltarea brandului tău.'
-                    },
-                    {
-                        img: value, en: 'Great value for money', ro: 'Raport calitate-preț excelent',
-                        enDesc: 'Delivering exceptional websites that offer great value for money, we focus on balancing quality and affordability.',
-                        roDesc: 'Oferim pagini web excepționale cu un raport calitate-preț excelent, punând accent pe echilibrul între calitate și accesibilitate.'
                     }
                 ].map((benefit, index) => (
-                    <div key={index} className="flex flex-col gap-[20px] max-w-[310px]">
+                    <div key={index} className="flex flex-col gap-[20px] xl:max-w-[310px]">
                         <img src={benefit.img} alt="" className='w-[50px] h-[50px]' />
                         <p className='text-[26px] font-medium text-white'>{language === 'en' ? benefit.en : benefit.ro}</p>
                         <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
@@ -114,6 +104,13 @@ const Benefits = ({ onScrollTo }) => {
                         </h2>
                     </div>
                 ))}
+                <div className="flex flex-col gap-[20px] xl:max-w-[1080px] 2xl:max-w-[1170px]">
+                    <img src={thunder} alt="" className='w-[50px] h-[50px]' />
+                    <p className='text-[26px] font-medium text-white'>{language === 'en' ? 'Mentenance, support and administration' : 'Mentenanță, suport și administrare'}</p>
+                    <h2 className='text-[16px] xs:text-[18px] font-light text-[#FFFFFF] opacity-[0.8]'>
+                        {language === 'en' ? 'We ensure the operation, updates, and security of your website through professional maintenance, support, and management services. Each package includes a free maintenance period, after which services can be extended starting from €50 per month, depending on the selected package. We offer affordable solutions that keep your website fully functional, secure, and compatible with the latest technologies. Regular maintenance prevents technical errors, reduces security risks, improves overall performance, and ensures a consistent experience for users. We continuously monitor your website to prevent downtime and respond quickly to any issues, ensuring your site remains online, stable, and optimized at all times.' : 'Asigurăm funcționarea, actualizarea și securitatea site-ului tău prin servicii profesionale de mentenanță, suport și administrare. Fiecare pachet include o perioadă gratuită de mentenanță, iar după această perioadă serviciile pot fi extinse începând de la 50€ pe lună, în funcție de pachetul ales. Oferim soluții accesibile care mențin site-ul tău în permanență funcțional, sigur și compatibil cu cele mai noi tehnologii. Mentenanța regulată previne erorile tehnice, reduce riscurile de securitate, îmbunătățește performanța generală și asigură o experiență constantă pentru utilizatori. Monitorizăm în permanență funcționarea site-ului pentru a preveni perioadele de inactivitate și a interveni rapid în cazul unor probleme, astfel încât website-ul tău să fie mereu online, stabil și optimizat.'}
+                    </h2>
+                </div>
             </section>
         </>
     );

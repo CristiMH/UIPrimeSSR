@@ -39,17 +39,17 @@ const Pricing = ({ onScrollTo }) => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-[50px] h-full">
-                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[983px]">
+                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[900px]">
                     <p className='text-[30px] xs:text-[34px] font-semibold text-white px-[15px] leading-none'>Landing Page</p>
                     <p className='text-[14px] font-medium text-white px-[15px] opacity-[0.8]'>
                         {language === 'en'
-                            ? 'Because each project is individual and unique, prices are negotiable, and packages can be modified based on requirements.'
-                            : 'Pentru că fiecare proiect este individual și unic, prețurile sunt negociabile, iar pachetele pot fi modificate în funcție de cerințe.'}
+                            ? 'Because each project is individual and unique, packages can be modified based on requirements.'
+                            : 'Pentru că fiecare proiect este individual și unic, pachetele pot fi modificate în funcție de cerințe.'}
                     </p>
                     <span className='block w-full h-[1px] opacity-[0.8] bg-[#51FFF8]'></span>
                     <div className="flex flex-col px-[15px]">
                         <p className='text-[#51FFF8] text-[32px] xs:text-[36px] font-semibold'>
-                            {language === 'en' ? 'From ' : 'De la '} <span className='text-[36px] xs:text-[40px]'>€50</span>
+                            {language === 'en' ? 'From ' : 'De la '} <span className='text-[36px] xs:text-[40px]'>€100</span>
                         </p>
                         <p className='font-medium text-[14px] text-white opacity-[0.8]'>{language === 'en' ? 'One time fee' : 'Taxă unică'}</p>
                     </div>
@@ -73,7 +73,7 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Number of languages: 1' : 'Număr de limbi: 1'}
+                                    {language === 'en' ? 'Number of languages: 2' : 'Număr de limbi: 2'}
                                 </p>
                             </div>
 
@@ -97,7 +97,7 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'SEO integration' : 'Integrare SEO'}
+                                    {language === 'en' ? 'Baseline SEO integration' : 'Integrare SEO de bază'}
                                 </p>
                             </div>
                         </div>
@@ -114,17 +114,17 @@ const Pricing = ({ onScrollTo }) => {
                     </div>
                 </div>
 
-                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[983px]">
-                    <p className='text-[30px] xs:text-[34px] font-semibold text-white px-[15px] leading-none'>Content-Based</p>
+                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[900px]">
+                    <p className='text-[30px] xs:text-[34px] font-semibold text-white px-[15px] leading-none'>{language === 'en' ? 'Corporate Site' : 'Site Corporativ'}</p>
                     <p className='text-[14px] font-medium text-white px-[15px] opacity-[0.8]'>
                         {language === 'en'
-                            ? 'Because each project is individual and unique, prices are negotiable, and packages can be modified based on requirements.'
-                            : 'Pentru că fiecare proiect este individual și unic, prețurile sunt negociabile, iar pachetele pot fi modificate în funcție de cerințe.'}
+                            ? 'Because each project is individual and unique, packages can be modified based on requirements.'
+                            : 'Pentru că fiecare proiect este individual și unic, pachetele pot fi modificate în funcție de cerințe.'}
                     </p>
                     <span className='block w-full h-[1px] opacity-[0.8] bg-[#51FFF8]'></span>
                     <div className="flex flex-col px-[15px]">
                         <p className='text-[#51FFF8] text-[32px] xs:text-[36px] font-semibold'>
-                            {language === 'en' ? 'From ' : 'De la '} <span className='text-[36px] xs:text-[40px]'>€250</span>
+                            {language === 'en' ? 'From ' : 'De la '} <span className='text-[36px] xs:text-[40px]'>€400</span>
                         </p>
                         <p className='font-medium text-[14px] text-white opacity-[0.8]'>{language === 'en' ? 'One time fee' : 'Taxă unică'}</p>
                     </div>
@@ -134,28 +134,21 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Creation time: 7 - 15 days' : 'Timp de creare: 7 - 15 zile'}
+                                    {language === 'en' ? 'Creation time: 10 - 20 days' : 'Timp de creare: 10 - 20 zile'}
                                 </p>
                             </div>
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Number of pages: 3 - 8' : 'Număr de pagini: 3 - 8'}
+                                    {language === 'en' ? 'Number of pages: 2 - 8' : 'Număr de pagini: 2 - 8'}
                                 </p>
                             </div>
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Number of languages: 2' : 'Număr de limbi: 2'}
-                                </p>
-                            </div>
-
-                            <div className="flex gap-[10px]">
-                                <img src={bulletpoint} alt="" className='w-[14px]' />
-                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? '20 products' : '20 produse'}
+                                    {language === 'en' ? 'Number of languages: 1' : 'Număr de limbi: 1'}
                                 </p>
                             </div>
 
@@ -179,7 +172,7 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'SEO integration' : 'Integrare SEO'}
+                                    {language === 'en' ? 'Baseline SEO integration' : 'Integrare SEO de bază'}
                                 </p>
                             </div>
 
@@ -192,7 +185,9 @@ const Pricing = ({ onScrollTo }) => {
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
-                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>Training</p>
+                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
+                                    {language === 'en' ? 'Training' : 'Instruire'}
+                                </p>
                             </div>
                         </div>
 
@@ -208,18 +203,18 @@ const Pricing = ({ onScrollTo }) => {
                     </div>
                 </div>
 
-                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[983px]">
-                    <p className='text-[30px] xs:text-[34px] font-semibold text-white px-[15px] leading-none'>E-Commerce</p>
+                <div className="max-w-[360px] w-full rounded-[16px] border-[1px] border-[#51FFF8] bg-[#222222] flex flex-col gap-[25px] py-[35px] px-[25px] lg:min-h-[900px]">
+                    <p className='text-[30px] xs:text-[34px] font-semibold text-white px-[15px] leading-none'>{language === 'en' ? 'E-Commerce ' : 'Magazin Online'}</p>
                     <p className='text-[14px] font-medium text-white px-[15px] opacity-[0.8]'>
                         {language === 'en'
-                            ? 'Because each project is individual and unique, prices are negotiable, and packages can be modified based on requirements.'
-                            : 'Pentru că fiecare proiect este individual și unic, prețurile sunt negociabile, iar pachetele pot fi modificate în funcție de cerințe.'}
+                            ? 'Because each project is individual and unique, packages can be modified based on requirements.'
+                            : 'Pentru că fiecare proiect este individual și unic, pachetele pot fi modificate în funcție de cerințe.'}
                     </p>
                     <span className='block w-full h-[1px] opacity-[0.8] bg-[#51FFF8]'></span>
                     <div className="flex flex-col px-[15px]">
                         <p className='text-[#51FFF8] text-[32px] xs:text-[36px] font-semibold'>
                             {language === 'en' ? 'From ' : 'De la '}
-                            <span className='text-[36px] xs:text-[40px]'>€500</span>
+                            <span className='text-[36px] xs:text-[40px]'>€600</span>
                         </p>
                         <p className='font-medium text-[14px] text-white opacity-[0.8]'>
                             {language === 'en' ? 'One time fee' : 'Taxă unică'}
@@ -231,28 +226,21 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Creation time: 14 - 30 days' : 'Timp de creare: 14 - 30 zile'}
+                                    {language === 'en' ? 'Creation time: 20 - 40 days' : 'Timp de creare: 20 - 40 zile'}
                                 </p>
                             </div>
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Number of pages: 3 - 10' : 'Număr de pagini: 3 - 10'}
+                                    {language === 'en' ? 'Number of pages: 2 - 10' : 'Număr de pagini: 2 - 10'}
                                 </p>
                             </div>
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Number of languages: 2' : 'Număr de limbi: 2'}
-                                </p>
-                            </div>
-
-                            <div className="flex gap-[10px]">
-                                <img src={bulletpoint} alt="" className='w-[14px]' />
-                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? '40 products' : '40 produse'}
+                                    {language === 'en' ? 'Number of languages: 1' : 'Număr de limbi: 1'}
                                 </p>
                             </div>
 
@@ -276,7 +264,7 @@ const Pricing = ({ onScrollTo }) => {
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'SEO integration' : 'Integrare SEO'}
+                                    {language === 'en' ? 'Baseline SEO integration' : 'Integrare SEO de bază'}
                                 </p>
                             </div>
 
@@ -289,13 +277,15 @@ const Pricing = ({ onScrollTo }) => {
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
-                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>Training</p>
+                                <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
+                                    {language === 'en' ? 'Training' : 'Instruire'}
+                                </p>
                             </div>
 
                             <div className="flex gap-[10px]">
                                 <img src={bulletpoint} alt="" className='w-[14px]' />
                                 <p className='text-[16px] xxs:text-[18px] xs:text-[20.5px] font-medium text-white'>
-                                    {language === 'en' ? 'Payment gateway integration' : 'Integrare payment gateway'}
+                                    {language === 'en' ? 'Payment gateway integration' : 'Integrare achitare online'}
                                 </p>
                             </div>
                         </div>
