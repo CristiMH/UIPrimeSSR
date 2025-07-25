@@ -43,13 +43,13 @@ const Benefits = ({ onScrollTo }) => {
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0 }} className="flex flex-wrap justify-center gap-[20px] mt-[35px]">
                     {[
-                        { en: 'Website Development', ro: 'Creare Website' },
                         { en: 'Website Maintenance', ro: 'Mentenanță Website' },
+                        { en: 'Website Development', ro: 'Creare Website' },
                         { en: 'SEO Integration', ro: 'Integrare SEO' },
                         { en: 'Web Hosting', ro: 'Web Hosting' },
                         { en: 'Databases', ro: 'Baze de date' }
                     ].map((item, idx) => (
-                        <div key={idx} onClick={() => setCurrentIndex(idx)} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer hover:bg-[#28b5af] transition-all duration-75 ease-in">
+                        <div key={idx} onClick={() => { setCurrentIndex(idx); }} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer hover:bg-[#28b5af] transition-all duration-75 ease-in">
                             <h2 className='font-semibold text-black'>{language === 'en' ? item.en : item.ro}</h2>
                         </div>
                     ))}
@@ -58,9 +58,23 @@ const Benefits = ({ onScrollTo }) => {
 
             {
                 show && (
-                    <section className='text-white font-barlow flex flex-col items-center justify-center gap-[30px] px-[15px] pt-[80px] pb-[100px] xs:container xs:mx-auto'>
-                        <p className='text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-[#51FFF8] text-center'>{language === 'en' ? infoEN[currentIndex].title : infoRO[currentIndex].title}</p>
-                        <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] text-center  max-w-[1000px]'>{language === 'en' ? infoEN[currentIndex].descriere : infoRO[currentIndex].descriere}</p>
+                    <section className='min-h-[480px] text-white font-barlow flex flex-col items-center justify-center gap-[30px] px-[15px] pt-[50px] pb-[100px] xs:container xs:mx-auto'>
+                        <motion.div
+                            key={`title-${currentIndex}`}
+                            variants={fadeIn('left', 0.1)}
+                            initial='hidden'
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0 }}>
+                            <p className='text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-[#51FFF8] text-center'>{language === 'en' ? infoEN[currentIndex].title : infoRO[currentIndex].title}</p>
+                        </motion.div>
+                        <motion.div
+                            key={`desc-${currentIndex}`}
+                            variants={fadeIn('right', 0.1)}
+                            initial='hidden'
+                            whileInView={"show"}
+                            viewport={{ once: false, amount: 0 }}>
+                            <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] text-center  max-w-[1000px]'>{language === 'en' ? infoEN[currentIndex].descriere : infoRO[currentIndex].descriere}</p>
+                        </motion.div>
                     </section>
                 )
             }
