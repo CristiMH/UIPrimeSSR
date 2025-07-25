@@ -8,6 +8,7 @@ const Benefits = ({ onScrollTo }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [infoRO, setInfoRO] = useState([]);
     const [infoEN, setInfoEN] = useState([]);
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         fetch('/website_services_descriptions.json')
@@ -15,6 +16,7 @@ const Benefits = ({ onScrollTo }) => {
             .then((data) => {
                 setInfoRO(data.infoRO);
                 setInfoEN(data.infoEN);
+                setShow(true);
             })
             .catch((err) => console.error('Failed to load descriptions:', err));
     }, []);
@@ -54,10 +56,14 @@ const Benefits = ({ onScrollTo }) => {
                 </motion.div>
             </section>
 
-            <section className='text-white font-barlow flex flex-col items-center justify-center gap-[30px] px-[15px] pt-[80px] pb-[100px] xs:container xs:mx-auto'>
-                <p className='text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-[#51FFF8] text-center'>{language === 'en' ? infoEN[currentIndex].title : infoRO[currentIndex].title}</p>
-                <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] text-center  max-w-[1000px]'>{language === 'en' ? infoEN[currentIndex].descriere : infoRO[currentIndex].descriere}</p>
-            </section>
+            {
+                show && (
+                    <section className='text-white font-barlow flex flex-col items-center justify-center gap-[30px] px-[15px] pt-[80px] pb-[100px] xs:container xs:mx-auto'>
+                        <p className='text-[28px] xs:text-[34px] sm:text-[40px] md:text-[44px] font-semibold text-[#51FFF8] text-center'>{language === 'en' ? infoEN[currentIndex].title : infoRO[currentIndex].title}</p>
+                        <p className='text-[16px] xs:text-[18px] sm:text-[20px] md:text-[22px] text-center  max-w-[1000px]'>{language === 'en' ? infoEN[currentIndex].descriere : infoRO[currentIndex].descriere}</p>
+                    </section>
+                )
+            }
         </>
     );
 };
