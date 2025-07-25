@@ -149,12 +149,23 @@ const Top = ({ onScrollTo }) => {
                     {language === 'en' ? 'How we work' : 'Cum lucrăm'}
                 </p>
                 <div className="flex justify-between lg:flex-row flex-col lg:gap-[40px] gap-[15px]">
-                    <h2 className='lg:w-[1600px] xl:w-auto text-[24px] xxs:text-[28px] xs:text-[33px] md:text-[40px] xl:text-[48px] 2xl:text-[54px] font-semibold text-white'>
-                        {language === 'en' 
-                        ? 'Get a dedicated website development service at a fraction of the cost' 
-                        : 'Obține un serviciu dedicat de dezvoltare web la un preț redus'}
-                    </h2>
-                    <div className="flex flex-col justify-between lg:gap-0 gap-[15px]">
+                    <motion.div 
+                        variants={fadeIn('right', 0.2)}
+                        initial='hidden'
+                        whileInView={"show"}
+                        viewport={{once: false, amount: 0}}>
+                        <h2 className='lg:w-[1600px] xl:w-auto text-[24px] xxs:text-[28px] xs:text-[33px] md:text-[40px] xl:text-[48px] 2xl:text-[54px] font-semibold text-white'>
+                            {language === 'en' 
+                            ? 'Get a dedicated website development service at a fraction of the cost' 
+                            : 'Obține un serviciu dedicat de dezvoltare web la un preț redus'}
+                        </h2>
+                    </motion.div>
+                    <motion.div 
+                        variants={fadeIn('left', 0.2)}
+                        initial='hidden'
+                        whileInView={"show"}
+                        viewport={{once: false, amount: 0}}
+                         className="flex flex-col justify-between lg:gap-0 gap-[15px]">
                         <h2 className='text-[16px] xs:text-[18px] md:text-[20px] xl:text-[24px] font-light text-[#FFFFFF] opacity-[0.8]'>
                             {language === 'en'
                             ? 'Grow your brand with high-quality websites for a minimal fee. Work with experienced designers and engineers. Contact us to develop your business.'
@@ -168,7 +179,7 @@ const Top = ({ onScrollTo }) => {
                                 : 'Vezi prețurile'}
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -195,7 +206,7 @@ const Top = ({ onScrollTo }) => {
                 </motion.div>
 
                 <motion.div 
-                    variants={fadeIn('up', 0.4)}
+                    variants={fadeIn('up', 0.3)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{once: false, amount: 0.7}}
@@ -216,7 +227,7 @@ const Top = ({ onScrollTo }) => {
                 </motion.div>
 
                 <motion.div 
-                    variants={fadeIn('up', 0.6)}
+                    variants={fadeIn('up', 0.5)}
                     initial='hidden'
                     whileInView={"show"}
                     viewport={{once: false, amount: 0.7}}
