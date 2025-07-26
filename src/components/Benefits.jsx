@@ -49,7 +49,7 @@ const Benefits = ({ onScrollTo }) => {
                         { en: 'Web Hosting', ro: 'Web Hosting' },
                         { en: 'Databases', ro: 'Baze de date' }
                     ].map((item, idx) => (
-                        <div key={idx} onClick={() => { setCurrentIndex(idx); }} className="bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer hover:bg-[#28b5af] transition-all duration-75 ease-in">
+                        <div key={idx} onClick={() => { setCurrentIndex(idx); }} className={`${currentIndex === idx ? 'bg-[#28b5af]' : ' hover:bg-[#28b5af] transition-all duration-75 ease-in'} bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer`}>
                             <h2 className='font-semibold text-black'>{language === 'en' ? item.en : item.ro}</h2>
                         </div>
                     ))}
