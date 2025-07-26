@@ -9,6 +9,7 @@ const Benefits = ({ onScrollTo }) => {
     const [infoRO, setInfoRO] = useState([]);
     const [infoEN, setInfoEN] = useState([]);
     const [show, setShow] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
     useEffect(() => {
         fetch('/website_services_descriptions.json')
@@ -49,7 +50,7 @@ const Benefits = ({ onScrollTo }) => {
                         { en: 'Web Hosting', ro: 'Web Hosting' },
                         { en: 'Databases', ro: 'Baze de date' }
                     ].map((item, idx) => (
-                        <div key={idx} onClick={() => { setCurrentIndex(idx); }} className={`${currentIndex === idx ? 'bg-[#28b5af]' : ' hover:bg-[#28b5af] transition-all duration-75 ease-in'} bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer`}>
+                        <div key={idx} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} onClick={() => { setCurrentIndex(idx); }} className={`${currentIndex === idx && !isHover ? '!bg-[#28b5af]' : ' hover:bg-[#28b5af]'} transition-all duration-150 ease-in bg-[#51FFF8] px-[23px] py-[8px] xs:px-[27px] xs:py-[12px] rounded-[8px] cursor-pointer`}>
                             <h2 className='font-semibold text-black'>{language === 'en' ? item.en : item.ro}</h2>
                         </div>
                     ))}
